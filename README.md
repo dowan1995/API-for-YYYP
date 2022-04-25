@@ -16,6 +16,7 @@ pip install xlwt
 pip install xlrd
 pip install pandas
 pip install xlutils
+pip install requests
 ```
 
 # Python Version 3.6.13
