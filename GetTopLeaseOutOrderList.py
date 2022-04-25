@@ -57,7 +57,7 @@ def main():
     # 读取 JSON 文件后删除该文件
     with open(f'{goods_id}_data.json', 'r') as f:
         data = json.load(f)
-        os.remove(f'{goods_id}_data.json')
+#         os.remove(f'{goods_id}_data.json')
 
     # pandas 读取 Excel，获取当前行数
     df = pd.read_excel(filename, engine='xlrd', sheet_name='sheet1')
