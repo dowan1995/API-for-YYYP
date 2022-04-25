@@ -5,6 +5,7 @@ import xlwt
 import time
 import requests
 import pandas as pd
+from goods import goods
 from xlutils.copy import copy
 
 goods_id = 740
@@ -49,9 +50,9 @@ def main():
     worksheet.write(0, 5, label="数据获取时间")
 
     # 如果不存在该文件就创建
-    filename = f'{goods_id}_租赁成交记录_' + filename_date_string + '.xls'
+    filename = f'{goods[goods_id]}_租赁成交记录_' + filename_date_string + '.xls'
     if not os.path.exists(filename):
-        workbook.save(f'{goods_id}_租赁成交记录_' + filename_date_string + '.xls')
+        workbook.save(filename)
 
     # 读取 JSON 文件后删除该文件
     with open(f'{goods_id}_data.json', 'r') as f:
