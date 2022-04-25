@@ -9,3 +9,13 @@
 
 <img width="617" alt="image" src="https://user-images.githubusercontent.com/46449568/165053922-0a9c1fcb-d0bb-4bae-b783-b7318b484ed4.png">
 
+# 环境准备
+```
+pip install json
+pip install xlwt
+pip install xlrd
+pip install pandas
+pip install xlutils
+```
+
+# Python Version 3.6.13
