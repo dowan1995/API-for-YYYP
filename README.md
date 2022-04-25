@@ -4,6 +4,8 @@
 
 以程序运行时间戳作为唯一值，Excel表格中可以使用筛选区分。
 
-<img width="724" alt="image" src="https://user-images.githubusercontent.com/46449568/165051738-325faa8d-3568-4f63-a5a7-41137e8f925b.png">
+<img width="567" alt="image" src="https://user-images.githubusercontent.com/46449568/165053656-16acc0b3-baff-4fb7-9708-86243c2013f7.png">
 
-<img width="803" alt="image" src="https://user-images.githubusercontent.com/46449568/165051783-2c542c41-7692-4b1b-916b-99505e7aca03.png">
+
+<img width="617" alt="image" src="https://user-images.githubusercontent.com/46449568/165053922-0a9c1fcb-d0bb-4bae-b783-b7318b484ed4.png">
+
