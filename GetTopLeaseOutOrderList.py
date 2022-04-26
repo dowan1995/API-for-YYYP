@@ -1,5 +1,7 @@
 import os
 import json
+import sys
+
 import xlrd
 import xlwt
 import time
@@ -8,7 +10,7 @@ import pandas as pd
 from goods import goods
 from xlutils.copy import copy
 
-goods_id = 740
+goods_id = int(sys.argv[1])
 
 url = f"https://api.youpin898.com/api/trade/Order/GetTopLeaseOutOrderList?TemplateId={goods_id}"
 
@@ -27,6 +29,8 @@ def json_file():
     判断文件是否存在，不存在则创建；
     在该文件夹下创建 HTTP GET 返回的 JSON 数据文件
     """
+    if not os.path.exists("excel"):
+        os.mkdir("excel")
     with open(f"{goods_id}_data.json", "w") as fp:
         fp.write(json.dumps(request_data()['Data'], sort_keys=True, indent=4, separators=(',', ': ')))
 
@@ -50,14 +54,14 @@ def main():
     worksheet.write(0, 5, label="数据获取时间")
 
     # 如果不存在该文件就创建
-    filename = f'{goods[goods_id]}_租赁成交记录_' + filename_date_string + '.xls'
+    filename = f'excel/{goods[goods_id]}_租赁成交记录_' + filename_date_string + '.xls'
     if not os.path.exists(filename):
         workbook.save(filename)
 
     # 读取 JSON 文件后删除该文件
     with open(f'{goods_id}_data.json', 'r') as f:
         data = json.load(f)
-#         os.remove(f'{goods_id}_data.json')
+        os.remove(f'{goods_id}_data.json')
 
     # pandas 读取 Excel，获取当前行数
     df = pd.read_excel(filename, engine='xlrd', sheet_name='sheet1')
